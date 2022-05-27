@@ -85,7 +85,7 @@ function Singup() {
 			})
 			.then(res => res.json())
 			.then(data => signUpErrorMsg(data))
-		setsubmitOk(true)
+			setsubmitOk(true)
 		}
 		console.log(submitOk);
 	  }

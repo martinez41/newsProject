@@ -1,8 +1,7 @@
 import React,{ useEffect, useState} from 'react'
 import axios from 'axios'
 import NewsItems from './NewsItems';
-import Img from '../img/icons8-user-64 (2).png'
-import { BsGeoAlt, BsGeoFill ,BsPersonCircle} from "react-icons/bs";
+import {BsGeoFill ,BsPersonCircle} from "react-icons/bs";
 
 
 function NewsList() {
@@ -14,7 +13,7 @@ const [city, setcity] = useState('');
 useEffect(() => {
 	const getArticles= async ()=>{
 		const resp = await axios.get('https://newsapi.org/v2/top-headlines?country=fr&apiKey=cc9cb112b00a4baca5bad860723b0b80')
-		// console.log(resp.data.articles)
+		console.log(resp.data.articles)
 		setarticles(resp.data.articles)
 	}
 	getArticles()

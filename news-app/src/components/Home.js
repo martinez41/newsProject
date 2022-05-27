@@ -1,8 +1,8 @@
 import React,{useState} from 'react'
 import NewsList from './NewsList'
-import NewsSearch from './NewsSearch'
-import { Link, useParams ,useNavigate} from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
 import logo from '../img/All_News-logo-62939EED68-seeklogo.com.png'
+import NewsSearch from './NewsSearch'
 
 
 
@@ -19,7 +19,7 @@ function Home() {
 		settext(e.currentTarget.value)
 	}
 
-	const handleSearch=e=>{
+	const handleSearch =()=>{
 		setflag(true)
 	}
 
@@ -30,7 +30,6 @@ function Home() {
 	<div className='container-fluid '>
 		<div className='col-md-12 text-center mt-3 mb-3'>
 			<img src={logo} alt="" />
-				{/* <h3 style={{color:'#fff'}}> News APP </h3> */}
 		</div>
 		<header className='sticky-top' >
 		
@@ -62,8 +61,8 @@ function Home() {
 		</div>
 		</header> 
 		<main>
-			{flag === true &&<NewsSearch text={text} flag={setflag}/>}
-			{/* {text === {} && setflag(false)} */}
+			{flag && <NewsSearch text={text}/>}
+			{/* <NewsSearch/> */}
 			<NewsList/>
 		</main>
 	</div>
